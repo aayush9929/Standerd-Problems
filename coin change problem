@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	int t,n;
+	cin>>t;
+	while(t--){
+		int dp[300]={0};
+		dp[0] = 1;
+		cin>>n;
+		int a[n];
+		for(int i=0;i<n;i++){
+			cin>>a[i];
+		}
+		int value;
+		cin>>value;
+		for(int i=0;i<n;i++){
+			for(int j=a[i];j<300;j++){
+				dp[j] += dp[j-a[i]];
+				
+			}
+		}
+		cout<<dp[value];
+		/*for(int i=0;i<300;i++){
+			cout<<dp[i]<<endl;
+		}*/
+		
+	
+	}
+}
